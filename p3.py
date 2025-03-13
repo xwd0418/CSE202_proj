@@ -6,7 +6,7 @@ GRASS = 3
 
 def algo_brute_p2(matrix, start_point, initial_h):
     
-    pass
+    return algo_brute_p1(matrix, start_point, initial_h, player_class=Player_P3)
 
 def algo_p2(matrix, start_point, initial_h):
     pass

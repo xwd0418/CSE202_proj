@@ -1,6 +1,6 @@
 '''Only Stone'''
 
-from utils import Map, Player
+from utils import Map, Player, Player_P3
 EMPTY = 0
 STONE = 1
 APPLE = 2
@@ -9,7 +9,7 @@ GRASS = 3
 from copy import deepcopy
 from itertools import permutations
 
-def algo_brute_p1(matrix, start_point, initial_h):
+def algo_brute_p1(matrix, start_point, initial_h, player_class=Player):
     """
     Brute force algorithm to find the path with maximum sum of rewards.
     
@@ -18,7 +18,6 @@ def algo_brute_p1(matrix, start_point, initial_h):
     :param initial_h: Initial health points
     :return: the best reward
     """
-    player = Player(start_point, initial_h, matrix)
     game_map = Map(matrix)
     perms = (permutations(game_map.stones))
     # print("len stones", len(game_map.stones))
@@ -26,7 +25,7 @@ def algo_brute_p1(matrix, start_point, initial_h):
     for perm in perms:
         # print("new perm")
         # best_reward = 1
-        player = Player(start_point, initial_h, deepcopy(matrix))
+        player = player_class(start_point, initial_h, deepcopy(matrix))
         for stone in perm:
             if player.able_to_go_and_collect(stone[0], stone[1]):
                 player.go_and_collect_resource(stone[0], stone[1])
