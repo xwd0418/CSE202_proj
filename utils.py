@@ -77,7 +77,7 @@ class Player:
 # collecting every 2 stones and 1 grass is considered as 1 point 
 class Player_P3(Player):
     def __init__(self, start_point, initial_h, matrix):
-        self.super().__init__(start_point, initial_h, matrix)
+        super().__init__(start_point, initial_h, matrix) 
         self.num_stones = 0
         self.num_grass = 0
 
@@ -86,7 +86,7 @@ class Player_P3(Player):
         return abs(self.x - x) + abs(self.y - y) <= self.h and self.num_stones + self.num_grass <= 3
 
     def able_to_go_and_collect(self, x, y):
-        return abs(self.x - x) + abs(self.y - y) <= self.h + cost_of_resource(self.matrix[x, y]) and self.num_stones + self.num_grass <= 3
+        return abs(self.x - x) + abs(self.y - y) <= self.h + cost_of_resource_collecting(self.matrix[x, y]) and self.num_stones + self.num_grass <= 3
 
     def go_and_collect_resource(self, x, y):
         resource = self.matrix[x, y]
