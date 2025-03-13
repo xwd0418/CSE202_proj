@@ -1,0 +1,4 @@
+EMPTY = 0
+STONE = 1
+APPLE = 2
+GRASS = 3
