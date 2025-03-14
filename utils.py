@@ -33,7 +33,7 @@ class Map:
 
 class Player:
     def __init__(self, start_point, initial_h, matrix):
-        self.position = start_point
+        self.position = list(start_point)
         self.h = initial_h
         self.rewards = 0
         self.matrix = matrix
