@@ -122,6 +122,6 @@ from p1 import algo_brute_p1
 
 def algo_brute_p3(matrix, start_point, initial_h):
     
-    return algo_brute_p1(matrix, start_point, initial_h, player_class=Player_P3)
+    #return algo_brute_p1(matrix, start_point, initial_h, player_class=Player_P3)
 
 
